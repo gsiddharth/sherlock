@@ -21,8 +21,16 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-
+* Resources
+	Login Help: http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/
+				http://deepakrip007.wordpress.com/2013/10/28/facebook-connect-integration-using-devise-and-omniauth-in-rails-app/
+	
+	SSL Error: 	https://gist.github.com/fnichol/867550
+			   	http://stackoverflow.com/questions/4528101/ssl-connect-returned-1-errno-0-state-sslv3-read-server-certificate-b-certificat				
+	
+	Fonts:  fontawesome.io/
+			http://astronautweb.co/snippet/font-awesome/
+			http://www.hongkiat.com/blog/css3-on-off-button/
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

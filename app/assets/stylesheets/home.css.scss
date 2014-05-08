@@ -1,0 +1,87 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'systemvars';
+    
+#loginButtons{
+  
+  width: $page-width;
+  height: 100px;  
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; 
+
+  .facebookLoginButton{  
+    position: relative;
+    background:$facebook-blue;
+    font-family:$default-font;
+    width:200px;
+    height:40px;
+    border-radius:4px;
+    color:#fff;
+    margin: 0 auto;
+    padding:0px;  
+    cursor:pointer;
+    
+    a {    
+      position: relative;
+      font-family: $default-font;        
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      padding-right: 0.5em;    
+      top: 10px;
+      left:25px;
+      
+      &:before{
+        position:relative;      
+        content: "\f09a";
+        font-family: FontAwesome;                        
+        left:-10px;  
+      }       
+    } 
+    
+    &:hover{
+      background-color:$facebook-dark-blue;
+    }
+  }
+  
+  .googleLoginButton{  
+    position: relative;
+    background:$google-red;
+    font-family:$default-font;
+    width:200px;
+    height:40px;
+    border-radius:4px;
+    color:#fff;
+    margin: 0 auto;
+    padding:0px;  
+    cursor:pointer;
+    
+    a {    
+      position: relative;
+      font-family: $default-font;        
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      padding-right: 0.5em;    
+      top: 10px;
+      left:25px;
+      
+      &:before{
+        position:relative;      
+        content: "\f0d5";
+        font-family: FontAwesome;                        
+        left:-10px;  
+      }       
+    } 
+    
+    &:hover{
+      background-color:$google-dark-red;
+    }
+  }
+}

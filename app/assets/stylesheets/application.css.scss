@@ -9,5 +9,75 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require_tree . 
+ *= require font-awesome 
  */
+
+
+@import 'systemvars';
+
+body{
+	padding:0px;
+	margin:0px;
+}
+
+#topbanner{
+	position:relative;
+	top:0px;
+	background:#000000;	
+	margin:0px;
+	padding:0px;	
+	height:40px;
+	width:100%;	
+	
+	.topmenu{
+		position:relative;
+		top:0px;					
+		width:$page-width;		
+		margin: 0 auto;		
+		padding:0px;
+		height:100%;		
+		 			
+		a{
+			position:relative;
+			text-decoration:none;
+			top:8px;
+			margin-right:20px;				
+			font-family:$default-font;		
+			font-size:15px;
+			color:#ffffff;
+			display:inline;	
+			&:hover{
+				color:grey;
+			} 
+		}
+		
+		.right{					
+			float:right;						
+			top:0px;
+			background:$system-blue;
+			width:85px;
+			height:100%;
+			text-align:center;
+			padding:0px;
+			margin:0px;
+			
+			a{				
+				text-decoration:none;											
+				font-family:$default-font;		
+				font-size:15px;
+				margin:0 auto;
+				color:#ffffff;										 			
+			}
+			
+			&:hover{
+				background:#FFFFFF;
+				a{
+					color:#000000;
+				}
+			}			
+		}
+	}
+}
+
+
