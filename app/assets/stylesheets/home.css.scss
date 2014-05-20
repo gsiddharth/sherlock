@@ -3,85 +3,98 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'systemvars';
-    
-#loginButtons{
+
+
+#loginBackground{ 
   
-  width: $page-width;
-  height: 100px;  
-  position: absolute;
-  top:0;
+  position:absolute;
+  top:$banner-height;
   bottom: 0;
   left: 0;
   right: 0;
-  margin: auto; 
+  margin: auto;   
+  width:100%; 
+  background-image:image-url($home-background-image) ;
+  background-repeat:no-repeat;
+  background-size: 100% ;  
 
-  .facebookLoginButton{  
-    position: relative;
-    background:$facebook-blue;
-    font-family:$default-font;
-    width:200px;
-    height:40px;
-    border-radius:4px;
-    color:#fff;
-    margin: 0 auto;
-    padding:0px;  
-    cursor:pointer;
-    
-    a {    
-      position: relative;
-      font-family: $default-font;        
-      text-decoration: none;
-      color: #fff;
-      font-size: 16px;
-      padding-right: 0.5em;    
-      top: 10px;
-      left:25px;
-      
-      &:before{
-        position:relative;      
-        content: "\f09a";
-        font-family: FontAwesome;                        
-        left:-10px;  
-      }       
-    } 
-    
-    &:hover{
-      background-color:$facebook-dark-blue;
-    }
-  }
+  #loginButtons{  
+    height: 100px;  
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; 
   
-  .googleLoginButton{  
-    position: relative;
-    background:$google-red;
-    font-family:$default-font;
-    width:200px;
-    height:40px;
-    border-radius:4px;
-    color:#fff;
-    margin: 0 auto;
-    padding:0px;  
-    cursor:pointer;
-    
-    a {    
+    .facebookLoginButton{  
       position: relative;
-      font-family: $default-font;        
-      text-decoration: none;
-      color: #fff;
-      font-size: 16px;
-      padding-right: 0.5em;    
-      top: 10px;
-      left:25px;
+      background:$home-facebook-blue;
+      font-family:$default-font;
+      width:$home-button-width;
+      height:$home-button-height;
+      border-radius:$home-button-radius;
+      color:$home-button-font-color;
+      margin: 0 auto;
+      padding:0px;  
+      cursor:pointer;      
       
-      &:before{
-        position:relative;      
-        content: "\f0d5";
-        font-family: FontAwesome;                        
-        left:-10px;  
-      }       
-    } 
-    
-    &:hover{
-      background-color:$google-dark-red;
+      a {    
+        position: relative;
+        font-family: $default-font;        
+        text-decoration: none;
+        color: $home-button-font-color;
+        font-size: $home-button-font-size;
+        padding-right: 0.5em;    
+        top: 10px;
+        left:25px;
+        
+        &:before{
+          position:relative;      
+          content: "\f09a";
+          font-family: FontAwesome;                        
+          left:-10px;  
+        }       
+      } 
+      
+      &:hover{
+        background-color:$home-facebook-dark-blue;
+      }
     }
-  }
+    
+    .googleLoginButton{  
+      position: relative;
+      background:$home-google-red;
+      font-family:$default-font;
+      width:$home-button-width;
+      height:$home-button-height;
+      border-radius:$home-button-radius;
+      color:$home-button-font-color;
+      margin: 0 auto;
+      padding:0px;  
+      cursor:pointer;      
+      
+      a {    
+        position: relative;
+        font-family: $default-font;        
+        text-decoration: none;
+        color: $home-button-font-color;
+        font-size: $home-button-font-size;
+        padding-right: 0.5em;    
+        top: 10px;
+        left:25px;
+        
+        &:before{
+          position:relative;      
+          content: "\f0d5";
+          font-family: FontAwesome;                        
+          left:-10px;  
+        }       
+      } 
+      
+      &:hover{
+        background-color:$home-google-dark-red;
+      }
+    }
+   }  
 }

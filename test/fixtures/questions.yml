@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  difficulty_level: 1
+  variables: MyString
+  description: MyText
+  option1: MyString
+  option2: MyString
+  option3: MyString
+  option4: MyString
+  option5: MyString
+  right_option: MyString
+
+two:
+  difficulty_level: 1
+  variables: MyString
+  description: MyText
+  option1: MyString
+  option2: MyString
+  option3: MyString
+  option4: MyString
+  option5: MyString
+  right_option: MyString

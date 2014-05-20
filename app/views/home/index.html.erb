@@ -1,12 +1,10 @@
-<% if user_signed_in? %>
-Signed in as <%= current_user.name %>. Not you?
-<%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
-<% else %>
+<div id="loginBackground">
 
 <div id="loginButtons">
-<div class="facebookLoginButton"><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook) %></div>
+<div class="facebookLoginButton"><%= link_to "Login with Facebook", '/auth/facebook/'%></div>
 
 <br><br>
 <div class="googleLoginButton"><a href="#">Login with Google</a></div>
 </div>
-<% end %>
+
+</div>

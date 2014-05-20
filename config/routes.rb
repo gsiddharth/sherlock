@@ -1,7 +1,12 @@
 Sherlock::Application.routes.draw do
-
+  
   root :to => "home#index"
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  
+  match 'auth/:provider/callback', to: 'session#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'session#destroy', as: 'signout', via: [:get, :post]
+  get 'dashboard/index' => 'dashboard#index', as: :index_dashboard     
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

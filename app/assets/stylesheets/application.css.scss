@@ -18,66 +18,119 @@
 
 body{
 	padding:0px;
-	margin:0px;
+	margin:0px;	
 }
+
 
 #topbanner{
-	position:relative;
-	top:0px;
-	background:#000000;	
-	margin:0px;
-	padding:0px;	
-	height:40px;
-	width:100%;	
-	
-	.topmenu{
-		position:relative;
-		top:0px;					
-		width:$page-width;		
-		margin: 0 auto;		
-		padding:0px;
-		height:100%;		
-		 			
-		a{
-			position:relative;
-			text-decoration:none;
-			top:8px;
-			margin-right:20px;				
-			font-family:$default-font;		
-			font-size:15px;
-			color:#ffffff;
-			display:inline;	
-			&:hover{
-				color:grey;
-			} 
-		}
-		
-		.right{					
-			float:right;						
-			top:0px;
-			background:$system-blue;
-			width:85px;
-			height:100%;
-			text-align:center;
-			padding:0px;
-			margin:0px;
-			
-			a{				
-				text-decoration:none;											
-				font-family:$default-font;		
-				font-size:15px;
-				margin:0 auto;
-				color:#ffffff;										 			
-			}
-			
-			&:hover{
-				background:#FFFFFF;
-				a{
-					color:#000000;
-				}
-			}			
-		}
-	}
+  position:fixed;
+  top:0px;  
+  margin:0px;
+  padding:0px;    
+  width:100%;   
+  z-index:1;
+  box-shadow: 0px 5px 5px $banner-shadow-color;
+  background:$banner-background;
+  height:$banner-height;
+  
+  .topmenu{
+    position:relative;
+    top:0px;              
+    margin: 0 auto;   
+    padding:0px;
+    height:100%;    
+    width:$page-width;
+          
+    a{
+      position:relative;
+      text-decoration:none;
+      top:8px;
+      margin-right:20px;              
+      display:inline; 
+      font-family:$default-font;    
+      font-size:$banner-font-size;
+      color:$banner-font-color;
+      &:hover{
+        color:grey;
+      } 
+    }
+    
+    .right{         
+      float:right;            
+      top:0px;      
+      height:100%;
+      text-align:center;
+      padding:0px;
+      margin:0px;
+      background:$banner-right-color;
+      width:$banner-right-width;
+      
+      a{        
+        text-decoration:none;                     
+        font-family:$banner-font-family;    
+        font-size:$banner-font-size;
+        margin:0 auto;
+        color:$banner-font-color;                 
+      }
+      
+      &:hover{
+        background:$banner-right-hover-color;
+        a{
+          color:$banner-right-font-hover-color;
+        }
+      }     
+    }
+  }
 }
 
-
+#mainbody{
+  position:relative;
+  background-color:#fff;
+  top:0px;          
+  width:$page-width;    
+  margin: 0 auto;   
+  padding:0px;
+  height:100%;    
+  
+  #leftmenu{
+    position:relative;
+    top:$banner-height;
+    float:left;
+    width:$leftmenu-width;
+    min-height:600px;
+    height:100%;
+    border-right:$leftmenu-border;    
+    background-color:inherit;
+  //  box-shadow: -2px 0px 5px $banner-shadow-color;
+    .lmenutop{
+      position:relative;
+      top:0px;
+      height:$leftmenu-top-space-height;
+    }
+      
+    .lmenubutton{
+      position:relative;
+      top:0px;
+      font-family:$default-font;
+      font-size:13px;
+      padding-top:8px;
+      padding-bottom:8px;
+      padding-left:8px;
+      font-weight:bold;      
+      -webkit-transition: background 0.3s linear;
+      -moz-transition: background 0.3s linear;
+      -ms-transition: background 0.3s linear;
+      -o-transition: background 0.3s linear;
+      transition: background 0.3s linear;
+//      border-bottom:$leftmenu-border;
+      cursor:pointer;          
+      
+      &:hover{
+        background:$leftmenu-button-hover-color;
+        border-radius:2px;
+        
+      }
+               
+    }    
+  }
+}

@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  # :confirmable, :lockable, :timeoutable and :omniauthable  
   
   has_one :user_profile
   has_one :address, :through => :user_profile
@@ -21,22 +19,40 @@ class User < ActiveRecord::Base
   has_many :users_to_exams
   has_many :exams, :through => :users_to_exams 
          
-  def self.find_for_oauth(auth, signed_in_resource=nil)
+  def self.find_for_oauth(provider, auth, signed_in_resource=nil)
     
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    if user
-      return user
-    else
-      registered_user = User.where(:email => auth.info.email).first
-      if registered_user
-        return registered_user
-      else        
-        user = User.create( provider: auth.provider,
-                            uid: auth.uid,
-                            email: auth.info.email,
-                            password: Devise.friendly_token[0,20],
-                          )
-      end    end
+    print auth
+    
+    case provider
+      when "facebook"
+        return self.find_for_fb_oauth(auth, signed_in_resource)
+      else
+        return nil  
+    end     
   end
-         
+  
+  private
+    def self.find_for_oauth(auth, signed_in_resource=nil)      
+      user = User.where(:provider => auth.provider, :uid => auth.uid).first
+      if user
+        return user
+      else
+        registered_user = User.where(:email => auth.info.email).first
+        
+        if registered_user
+          return registered_user
+        else        
+          user = User.create( provider: auth.provider,
+                              uid: auth.uid,
+                              email: auth.info.email                              
+                            )
+          UserProfile.create( user: user,
+                              first_name: auth.info.first_name,
+                              last_name: auth.info.last_name,
+                              gender: auth.extra.raw_info.gender,
+                              profile_photo: auth.info.image)
+           return user
+        end
+      end
+    end          
 end
