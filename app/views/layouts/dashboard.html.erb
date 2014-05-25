@@ -17,18 +17,18 @@
 		</div>	
 	</div>
 	
-	<div id="mainbody">
-	
+	<div id="mainbody">	
 		<div id="leftmenu">
-			<div class="lmenutop"></div>
-			<div class="lmenubutton">Dashboard</div>
-			<div class="lmenubutton">Progress</div>
-			<div class="lmenubutton">History</div>
-			<div class="lmenubutton">Leadership Board</div>
+			<%= render "layouts/left_menu"%>			
 		</div>
 		
-		<%= yield %>
-		
-	</div>
+		<div id="middlebody">
+		<%= yield %>						
+		</div>
+							
+		<div id="rightmenu">
+			<%= render "layouts/right_subject_menu"%>
+		</div>						
+	</div>			
 </body>
 </html>

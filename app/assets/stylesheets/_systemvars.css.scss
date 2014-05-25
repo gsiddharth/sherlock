@@ -1,6 +1,7 @@
 //Full Body
 $default-font: Arial, Helvetica, sans-serif;
-$page-width:1024px;
+$default-font-color:#222222;
+$page-width:1100px;
 
 //Top Banner
 $banner-font-color:#ffffff;
@@ -16,9 +17,27 @@ $banner-right-font-hover-color:#000000;
 
 //left menu
 $leftmenu-top-space-height:40px;
-$leftmenu-width:180px;
-$leftmenu-border:1px solid #888888;
+$leftmenu-width:200px;
+$leftmenu-border:0px solid #fff;
 $leftmenu-button-hover-color:#dddddd;
+$leftmenu-button-active-color:#0066FF;
+$leftmenu-button-radius:2px;
+$leftmenu-button-active-font-color:#ffffff;
+$leftmenu-button-padding:8px;
+$leftmenu-button-font-size:13px;
+$leftmenu-button-margin:5px;
+
+//right menu
+$rightmenu-top-space-height:40px;
+$rightmenu-width:200px;
+$rightmenu-border:0px solid #fff;
+$rightmenu-button-hover-color:#dddddd;
+$rightmenu-button-active-color:#0066FF;
+$rightmenu-button-radius:2px;
+$rightmenu-button-active-font-color:#ffffff;
+$rightmenu-button-padding:8px;
+$rightmenu-button-font-size:13px;
+$rightmenu-button-margin:5px;
 
 
 //home.css.scss

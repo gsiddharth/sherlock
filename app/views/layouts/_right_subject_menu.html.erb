@@ -1,0 +1,27 @@
+<div class="rmenutop"></div>
+
+<% if @right_menu[2]==0 %>
+<div class="rmenubutton rmenubuttonactive">
+	<Dashboard>
+		<%= @right_menu[0].name%>
+</div>
+<% else %>
+<div class="rmenubutton">
+	<Dashboard>
+		<%= @right_menu[0].name%>
+</div>
+<% end %>
+
+<% for sub in @right_menu[1] %>
+<% if sub.id == @right_menu[2] %>
+<div class="rmenubutton rmenubuttonactive">
+	<Dashboard>
+		<%= sub.name%>
+</div>
+<% else %>
+<div class="rmenubutton">
+	<Dashboard>
+		<%= sub.name%>
+</div>
+<% end %>
+<% end %>

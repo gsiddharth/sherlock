@@ -16,8 +16,13 @@ class User < ActiveRecord::Base
                           :class_name => 'GuardianToUser'         
   has_many :childrens, :through => :child_cares
   
-  has_many :users_to_exams
-  has_many :exams, :through => :users_to_exams 
+  has_many :user_to_exams
+  has_many :exams, :through => :user_to_exams
+  
+  #TODO: this method will be called again and again, so need to optimize  
+  def active_exam
+    user_to_exams.where("active=?", true)[0].exam
+  end  
          
   def self.find_for_oauth(provider, auth, signed_in_resource=nil)
     
@@ -32,7 +37,7 @@ class User < ActiveRecord::Base
   end
   
   private
-    def self.find_for_oauth(auth, signed_in_resource=nil)      
+    def self.find_for_oauth(auth)      
       user = User.where(:provider => auth.provider, :uid => auth.uid).first
       if user
         return user

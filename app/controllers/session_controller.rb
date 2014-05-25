@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
   def create
-    user = User.find_for_oauth(request.env["omniauth.auth"], current_user)
+    user = User.find_for_oauth(request.env["omniauth.auth"])
     session[:user_id] = user.id
     redirect_to index_dashboard_path
   end  

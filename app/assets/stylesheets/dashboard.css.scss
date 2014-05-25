@@ -1,3 +1,71 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'systemvars';
+
+$top-summary-banner-height:150px;
+$top-summary-banner-background-color:#000;
+$top-summary-margin:5px;
+$dashboard-item-height:120px;
+$dashboard-item-border:1px solid #ccc;
+$dashboard-item-margin:5px;
+$dashboard-item-top-margin:15px;
+
+#mainbody{
+  #middlebody{
+    #top-summary-banner{
+      position:relative;
+      top:0px;      
+      height:$top-summary-banner-height;
+      background:$top-summary-banner-background-color;
+      margin:$top-summary-margin;
+    }
+    
+    #dashboard-items{
+      position:relative;
+      top:0px;
+      background:#eee;
+      min-height:400px;
+      height:100%;
+      margin:$dashboard-item-margin;
+      padding-bottom:10px;         
+    
+      .dashboard-item{
+        position:relative;
+        top:10px;      
+        height:$dashboard-item-height;        
+        font:$default-font;
+        margin-left:10px;
+        margin-right:10px;
+        margin-top:10px;                        
+                
+        .progress-bar{
+          position:relative;
+          top:0px;
+          left:0px;
+          width:30px;
+          height:100%;
+          float:left;
+          background:#fff;              
+          box-shadow: 0px 2px 2px #ccc;
+        }
+        
+        .dashboard-item-content{
+          position:relative;
+          top:0px;
+          width:630px;
+          left:10px;          
+          height:100%;
+          float:left;           
+          background:#fff;   
+          box-shadow: 0px 2px 2px #ccc;
+        }
+        
+        
+        
+      }            
+    }        
+  }
+}
+

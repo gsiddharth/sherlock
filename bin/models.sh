@@ -18,4 +18,4 @@ rails g model GeneratedQuestion question:references variable_values:string descr
 rails g model UserAnswer user:references generated_question:references marked_option:string iscorrect:bool
 rails g model QuestionSolution question:references description:text
 
-rails g model UserToExam user:belongs_to exam:belongs_to
+rails g model UserToExam user:belongs_to exam:belongs_to active:bool

@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Exam.delete_all
+exam=Exam.create!(name: 'SAT')
+Subject.delete_all
+subject=Subject.create!(name:'Mathematic',exam: exam)
+Topic.delete_all
+Topic.create(name:'Algebra', subject: subject)
+Topic.create(name:'Geometry', subject: subject)
+Topic.create(name:'Arithmetic Operations', subject: subject)
+Topic.create(name:'Statistics', subject: subject)
+Topic.create(name:'Probability', subject: subject)
+UserToExam.delete_all
+
+user=User.find(1)
+UserToExam.create!(user: user, exam:exam, active: true)
+
